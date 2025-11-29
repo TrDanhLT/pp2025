@@ -40,7 +40,7 @@ def input_marks_for_course():
         print("Course not found!")
         return
 
-    print(f"Entering marks for course {cid}")
+    print("Entering marks for course {cid}")
 
     marks[cid] = []
     for st in students:
@@ -56,7 +56,7 @@ def list_courses():
 def list_students():
     print("\nList of Students")
     for s in students:
-        print(f"{s['id']} - {s['name']} - {s['dob']}")
+        print("{s['id']} - {s['name']} - {s['dob']}")
 
 
 def show_marks_for_course():
@@ -66,14 +66,14 @@ def show_marks_for_course():
         print("No marks for this course!")
         return
 
-    print(f"Marks for Course {cid}")
+    print("Marks for Course {cid}")
     for sid, m in marks[cid]:
         student_name = next(s["name"] for s in students if s["id"] == sid)
-        print(f"{student_name} ({sid}): {m}")
+        print("{student_name} ({sid}): {m}")
 
 def main():
     while True:
-        print("\n===== Student Mark Management =====")
+        print("Student Mark Management")
         print("1. Input students")
         print("2. Input courses")
         print("3. Input marks for a course")

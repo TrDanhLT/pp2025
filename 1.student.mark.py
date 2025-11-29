@@ -56,7 +56,7 @@ def list_courses():
 def list_students():
     print("\nList of Students")
     for s in students:
-        print("{s['id']} - {s['name']} - {s['dob']}")
+        print(f"{s['id']} - {s['name']} - {s['dob']}")
 
 
 def show_marks_for_course():

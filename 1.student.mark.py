@@ -72,35 +72,35 @@ def show_marks_for_course():
         print("{student_name} ({sid}): {m}")
 
 def main():
+    actions = {
+        "1": self.input_students,
+        "2": self.input_courses,
+        "3": self.input_marks,
+        "4": self.show_students,
+        "5": self.show_courses,
+        "6": self.show_marks
+    }
+
     while True:
-        print("Student Mark Management")
-        print("1. Input students")
-        print("2. Input courses")
-        print("3. Input marks for a course")
-        print("4. List students")
-        print("5. List courses")
-        print("6. Show marks for a course")
+        print("1. Input Students")
+        print("2. Input Courses")
+        print("3. Input Marks")
+        print("4. Show Students")
+        print("5. Show Courses")
+        print("6. Show Marks")
         print("0. Exit")
 
-        choice = input("Your choice: ")
+        ch = input("ur choice: ")
 
-        if choice == "1":
-            input_number_of_students()
-        elif choice == "2":
-            input_number_of_courses()
-        elif choice == "3":
-            input_marks_for_course()
-        elif choice == "4":
-            list_students()
-        elif choice == "5":
-            list_courses()
-        elif choice == "6":
-            show_marks_for_course()
-        elif choice == "0":
+        if ch == "0":
+            print("bye bye")
             break
+
+        action = actions.get(ch)
+        if action:
+            action()
         else:
-            print("Invalid choice!")
-
-
+            print("invalid choice??? try again maybe")
+            
 if __name__ == "main":
     main()

@@ -113,36 +113,38 @@ class MarkSystem:
 
             print(name_found, "(", sid, "):", mk)
 
-    def run(self):
-        while True:
-            print("1. Input Students")
-            print("2. Input Courses")
-            print("3. Input Marks")
-            print("4. Show Students")
-            print("5. Show Courses")
-            print("6. Show Marks")
-            print("0. Exit")
+ def run(self):
+    actions = {
+        "1": self.input_students,
+        "2": self.input_courses,
+        "3": self.input_marks,
+        "4": self.show_students,
+        "5": self.show_courses,
+        "6": self.show_marks
+    }
 
-            ch = input("ur choice: ")
+    while True:
+        print("1. Input Students")
+        print("2. Input Courses")
+        print("3. Input Marks")
+        print("4. Show Students")
+        print("5. Show Courses")
+        print("6. Show Marks")
+        print("0. Exit")
 
-            if ch == "1":
-                self.input_students()
-            elif ch == "2":
-                self.input_courses()
-            elif ch == "3":
-                self.input_marks()
-            elif ch == "4":
-                self.show_students()
-            elif ch == "5":
-                self.show_courses()
-            elif ch == "6":
-                self.show_marks()
-            elif ch == "0":
-                print("bye bye")
-                break
-            else:
-                print("invalid choice??? try again maybe")
+        ch = input("ur choice: ")
+
+        if ch == "0":
+            print("bye bye")
+            break
+
+        action = actions.get(ch)
+        if action:
+            action()
+        else:
+            print("invalid choice??? try again maybe")
 
 if __name__ == "__main__":
     sys = MarkSystem()
     sys.run()
+
